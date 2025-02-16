@@ -8,6 +8,8 @@ on:
     branches:
       - master
 
+workflow_dispatch:
+
 jobs:
   generate-sbom:
     runs-on: ubuntu-latest
@@ -27,5 +29,5 @@ jobs:
     - name: Upload SBOM Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: sbom-report
-        path: sbom.xml
+        name: spdx-report
+        path: spdx.json
